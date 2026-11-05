@@ -623,7 +623,7 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
       <svg class="ring r2" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="86" fill="none" stroke="#E6BC57" stroke-width="1.2" stroke-dasharray="18 7 3 7" opacity=".8"/></svg>
       <div class="seal" data-t="seal">শুভ বিবাহ</div>
     </div>
-    <p class="gate-names" data-t="names1">পিয়ালী ও </p>
+    <p class="gate-names" data-t="names1">পিয়ালী ও প্রসেনজিৎ </p>
     <p class="gate-date" data-t="date">২২ ফেব্রুয়ারি ২০২৭</p>
     <div class="gate-actions">
       <button class="btn-gold" id="gateOpen" type="button" data-t="gateOpen">স্বাগতম 🙏</button>
@@ -1026,20 +1026,39 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
   tlLine.style.setProperty('--p', '0');
 
   /* ---------- Copy address ---------- */
-  $('#copyBtn').addEventListener('click', function () {
-    var btn = this, txt = T.addr[lang].replace(/\n/g, ', ');
+ 
+var copyBtn = $('#copyBtn');
+
+if (copyBtn) {
+  copyBtn.addEventListener('click', function () {
+    var btn = this;
+    var txt = T.addr[lang].replace(/\n/g, ', ');
+
     function done() {
       btn.textContent = T.copied[lang];
-      setTimeout(function () { btn.textContent = T.copy[lang]; }, 1600);
+
+      setTimeout(function () {
+        btn.textContent = T.copy[lang];
+      }, 1600);
     }
+
     function fallback() {
-      var rg = document.createRange(); rg.selectNodeContents($('#addrText'));
-      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(rg);
+      var rg = document.createRange();
+      rg.selectNodeContents($('#addrText'));
+
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(rg);
     }
+
     try {
       navigator.clipboard.writeText(txt).then(done, fallback);
-    } catch (e) { fallback(); }
+    } catch (e) {
+      fallback();
+    }
   });
+}
+
 
   /* ---------- Effects: garland, sparkles, petals, scroll reveal ---------- */
   var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
