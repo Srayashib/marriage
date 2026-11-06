@@ -238,7 +238,7 @@ html[lang="en"] .kicker { letter-spacing: .26em; text-transform: uppercase; font
 .seal-wrap::before { content: ""; position: absolute; inset: -34px; border-radius: 50%; background: radial-gradient(circle, rgba(240, 200, 100, .38), transparent 64%); animation: pulse 3.6s ease-in-out infinite; }
 .ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 46s linear infinite; }
 .ring.r2 { animation-duration: 70s; animation-direction: reverse; }
-.gate-date { margin-top: -6px; font-family: var(--font-d); font-size: 1.2rem; color: var(--gold-lt); }
+.gate-date { margin-top: -6px; font-family: var(--font-d); font-size: 1.5rem; color: var(--gold-lt); }
 .diya { position: absolute; z-index: 2; bottom: calc(env(safe-area-inset-bottom, 0px) + 14px); width: 40px; height: 32px; display: flex; justify-content: center; align-items: flex-end; pointer-events: none; transition: opacity .5s; }
 .diya.dl { left: 8%; } .diya.dr { right: 8%; }
 .diya::after { content: ""; width: 38px; height: 15px; border-radius: 0 0 38px 38px; background: linear-gradient(#E3A93A, #8A5A12); box-shadow: 0 0 16px rgba(240, 170, 60, .5); }
@@ -617,7 +617,7 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
   <span class="diya dl" aria-hidden="true"><i></i></span>
   <span class="diya dr" aria-hidden="true"><i></i></span>
   <div class="gate-c">
-    <p class="gate-kicker" data-t="gateKicker">আমন্ত্রণ</p>
+    <p class="gate-kicker" data-t="gateKicker">আমন্ত্রণ লিপি</p>
     <div class="seal-wrap">
       <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="95" fill="none" stroke="#E6BC57" stroke-width="1.8" stroke-dasharray="1 8" stroke-linecap="round"/></svg>
       <svg class="ring r2" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="86" fill="none" stroke="#E6BC57" stroke-width="1.2" stroke-dasharray="18 7 3 7" opacity=".8"/></svg>
@@ -656,7 +656,7 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
       <img src="images/bride.jpg" alt="Bride Piyali">
     </div>
   </div>
-  <p class="cap" data-t="bride">কনে</p>
+  <p class="cap" data-t="bride">পাত্রী</p>
 </div>
 
 <div class="fig">
@@ -665,7 +665,7 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
       <img src="images/groom.jpg" alt="Groom Proso">
     </div>
   </div>
-  <p class="cap" data-t="groom">বর</p>
+  <p class="cap" data-t="groom">পাত্র</p>
 </div>
       </div>
       <h1 class="rise" style="--d:2"><span class="sheen" data-t="names">পিয়ালী ও প্রসো</span></h1>
@@ -747,10 +747,10 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
         </article>
         <article class="ev ev-r">
           <svg class="ic" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M17 3l3.2 9.8L30 16l-9.8 3.2L17 29l-3.2-9.8L4 16l9.8-3.2z"/></svg>
-          <p class="k" data-t="evRecK">রিসেপশন</p>
+          <p class="k" data-t="evRecK">বৌভাত</p>
           <p class="big" data-t="evR">২৪</p>
           <h3 data-t="evC">ফেব্রুয়ারি ২০২৭</h3>
-          <p data-t="day">বুধবার</p>
+          <p data-t="Rday">বুধবার</p>
         </article>
        
       </div>
@@ -761,8 +761,8 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
     <div class="wrap">
       <div class="venue">
         <p class="cap" data-t="vCap">বিবাহস্থল</p>
-        <h2 data-t="vTitle">আমাদের বাড়ি</h2>
-        <p class="addr" id="addrText" data-t="addr">মিত্র পাড়া, বসু
+        <h2 data-t="vTitle">নিজস্ব বাসভবন </h2>
+        <p class="addr" id="addrText" data-t="addr">মিত্র পাড়া, বোসো
 ধনিয়াখালি, হুগলি
 পশ্চিমবঙ্গ</p>
         <hr>
@@ -782,7 +782,7 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
     </div>
   </footer>
 </main>
-
+<audio id="weddingAudio" src="music/wedding.mp3" preload="none" loop></audio>
 <script>
 (function () {
   var $ = function (s) { return document.querySelector(s); };
@@ -794,15 +794,15 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
   };
 
   var T = {
-    gateKicker: { bn: 'আমন্ত্রণ', en: 'You are invited' },
+    gateKicker: { bn: 'আমন্ত্রণ লিপি', en: 'You are invited' },
     seal: { bn: 'শুভ বিবাহ', en: 'Shubho Bibaho' },
     names: { bn: 'পিয়ালী ও প্রসো', en: 'Piyali & Proso' },
     names1: { bn: 'পিয়ালী ও প্রসেনজিৎ', en: 'Piyali & Prasenjit' },
     gateOpen: { bn: 'স্বাগতম', en: 'Welcome 🙏' },
     gateMusic: { bn: 'সুরসহ', en: 'With music' },
     heroKicker: { bn: 'শুভ বিবাহের আমন্ত্রণ', en: 'Wedding invitation' },
-    bride: { bn: 'কনে', en: 'Bride' },
-    groom: { bn: 'বর', en: 'Groom' },
+    bride: { bn: 'পাত্রী', en: 'Bride' },
+    groom: { bn: 'পাত্র', en: 'Groom' },
     addPhoto: { bn: 'ছবি যোগ করুন', en: 'Add photo' },
     invite: { bn: 'আমাদের জীবনের এই আনন্দের দিনে আপনার উপস্থিতি ও আশীর্বাদ প্রার্থনা করি।', en: 'On the happiest day of our lives, we would be honoured by your presence and blessings.' },
     day: { bn: 'সোমবার', en: 'Monday' },
@@ -824,8 +824,8 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
     s4h: { bn: '২২ ফেব্রুয়ারি ২০২৭', en: '22 February 2027' },
     s4p: { bn: 'এই দিনে আমরা একসঙ্গে পথ চলা শুরু করব। আপনি থাকলে আনন্দ পূর্ণ হবে।', en: 'On this day we begin walking together. Your presence will make it complete.' },
     vCap: { bn: 'বিবাহস্থল', en: 'Venue' },
-    vTitle: { bn: 'আমাদের বাড়ি', en: 'Our family home' },
-    addr: { bn: 'মিত্র পাড়া, বসু\nধনিয়াখালি, হুগলি\nপশ্চিমবঙ্গ', en: 'Mitra Para, Boso\nDhaniakhali, Hooghly\nWest Bengal' },
+    vTitle: { bn: 'নিজস্ব বাসভবন ', en: 'At Our House' },
+    addr: { bn: 'মিত্র পাড়া, বোসো\nধনিয়াখালি, হুগলি\nপশ্চিমবঙ্গ', en: 'Mitra Para, Boso\nDhaniakhali, Hooghly\nWest Bengal' },
     vDate: { bn: '২২ ফেব্রুয়ারি ২০২৭, সোমবার', en: 'Monday, 22 February 2027' },
     map: { bn: 'মানচিত্রে দেখুন', en: 'Open in Maps' },
     copy: { bn: 'ঠিকানা কপি করুন', en: 'Copy address' },
@@ -846,7 +846,7 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
     evR: { bn: '২৪', en: '24' },
     evC: { bn: 'ফেব্রুয়ারি ২০২৭', en: 'February 2027' },
     evWedP: { bn: 'আমাদের বাড়ি, ধনিয়াখালি, হুগলি', en: 'Our home, Dhaniakhali, Hooghly' },
-    evRecK: { bn: 'রিসেপশন', en: 'Reception' },
+    evRecK: { bn: 'বৌভাত', en: 'Reception' },
     evRecP: { bn: 'পরিবার ও বন্ধুদের সঙ্গে উদযাপন', en: 'A celebration with family and friends' },
     evRecDate: { bn: 'তারিখ শীঘ্রই জানানো হবে', en: 'Date to be announced' },
     evRitK: { bn: 'বিবাহের আচার', en: 'Wedding rituals' },
@@ -894,85 +894,58 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
   $('#gateLang').addEventListener('click', toggleLang);
   $('#ctlLang').addEventListener('click', toggleLang);
 
-  /* ---------- Music: a soft synthesized raga over a tanpura drone ---------- */
-  var Music = (function () {
-    var ctx = null, master = null, bus = null, timer = null, on = false, tNext = 0, mNext = 0, mi = 0, offTimer = null;
-    var SA = 146.83, BEAT = 0.82;
-    var R = { S: 1, R: 9 / 8, G: 5 / 4, M: 45 / 32, P: 3 / 2, D: 5 / 3, N: 15 / 8 };
-    var PH = [['S',1,1],['R',1,.5],['G',1,.5],['R',1,1],['G',1,1],['M',1,1.5],['G',1,.5],['P',1,2],['M',1,1],['G',1,1],['R',1,1],['S',1,2],
-              ['N',.5,1],['R',1,1],['G',1,1],['R',1,1],['S',1,2],['P',1,1],['D',1,1],['P',1,1],['M',1,1],['G',1,1.5],['R',1,.5],['S',1,3]];
-    function setup() {
-      var AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return false;
-      ctx = new AC();
-      master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
-      bus = ctx.createGain(); bus.connect(master);
-      var d = ctx.createDelay(1); d.delayTime.value = 0.3;
-      var fb = ctx.createGain(); fb.gain.value = 0.38;
-      var wet = ctx.createGain(); wet.gain.value = 0.5;
-      bus.connect(d); d.connect(fb); fb.connect(d); d.connect(wet); wet.connect(master);
-      return true;
-    }
-    function pluck(f, t) {
-      var o = ctx.createOscillator(), lp = ctx.createBiquadFilter(), g = ctx.createGain();
-      o.type = 'triangle'; o.frequency.value = f;
-      lp.type = 'lowpass'; lp.frequency.setValueAtTime(2400, t); lp.frequency.exponentialRampToValueAtTime(500, t + 2.2);
-      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.13, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + 3);
-      o.connect(lp); lp.connect(g); g.connect(bus);
-      o.start(t); o.stop(t + 3.1);
-    }
-    function tanpura(t) {
-      var q = BEAT / 2;
-      pluck(SA * 0.75, t); pluck(SA, t + q); pluck(SA, t + 2 * q); pluck(SA * 0.5, t + 3 * q);
-    }
-    function voice(f, t, dur) {
-      var o1 = ctx.createOscillator(), o2 = ctx.createOscillator(), lfo = ctx.createOscillator(), lg = ctx.createGain();
-      var lp = ctx.createBiquadFilter(), g = ctx.createGain();
-      o1.type = 'sawtooth'; o2.type = 'triangle'; o1.frequency.value = f; o2.frequency.value = f * 2;
-      lfo.frequency.value = 5.2; lg.gain.value = 10; lfo.connect(lg); lg.connect(o1.detune); lg.connect(o2.detune);
-      lp.type = 'lowpass'; lp.frequency.value = 1500; lp.Q.value = 1.2;
-      g.gain.setValueAtTime(0.0001, t); g.gain.linearRampToValueAtTime(0.085, t + 0.09);
-      g.gain.setValueAtTime(0.07, t + dur * 0.8); g.gain.exponentialRampToValueAtTime(0.0001, t + dur + 0.25);
-      o1.connect(lp); o2.connect(lp); lp.connect(g); g.connect(bus);
-      o1.start(t); o2.start(t); lfo.start(t);
-      o1.stop(t + dur + 0.3); o2.stop(t + dur + 0.3); lfo.stop(t + dur + 0.3);
-    }
-    function sched() {
-      var now = ctx.currentTime;
-      while (tNext < now + 1.2) { tanpura(tNext); tNext += BEAT * 2; }
-      while (mNext < now + 1.2) {
-        var p = PH[mi % PH.length], d = p[2] * BEAT;
-        voice(SA * 2 * R[p[0]] * p[1], mNext, d * 0.95);
-        mNext += d; mi++;
-      }
-    }
-    function start() {
-      try {
-        if (!ctx && !setup()) return false;
-        clearTimeout(offTimer);
-        ctx.resume();
-        tNext = mNext = ctx.currentTime + 0.15;
-        master.gain.cancelScheduledValues(ctx.currentTime);
-        master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
-        master.gain.linearRampToValueAtTime(0.9, ctx.currentTime + 1.5);
-        clearInterval(timer); sched(); timer = setInterval(sched, 300);
-        on = true; return true;
-      } catch (e) { on = false; return false; }
-    }
-    function stop() {
-      if (!ctx) { on = false; return; }
-      on = false;
-      master.gain.cancelScheduledValues(ctx.currentTime);
-      master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
-      master.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.4);
-      offTimer = setTimeout(function () { clearInterval(timer); try { ctx.suspend(); } catch (e) {} }, 500);
-    }
-    document.addEventListener('visibilitychange', function () {
-      if (!ctx || !on) return;
-      try { if (document.hidden) ctx.suspend(); else ctx.resume(); } catch (e) {}
-    });
-    return { start: start, stop: stop, isOn: function () { return on; } };
-  })();
+ /* ---------- Wedding MP3 Music Player ---------- */
+var Music = (function () {
+var audio = document.getElementById('weddingAudio');
+var on = false;
+
+if (!audio) {
+return {
+start: function () { return false; },
+stop: function () {},
+isOn: function () { return false; }
+};
+}
+
+audio.loop = true;
+audio.volume = 0.65;
+
+audio.addEventListener('play', function () {
+on = true;
+});
+
+audio.addEventListener('pause', function () {
+on = false;
+});
+
+function start() {
+var promise = audio.play();
+
+if (promise && promise.then) {
+  promise.then(function () {
+    on = true;
+  }).catch(function () {
+    on = false;
+  });
+}
+
+return true;
+
+}
+
+function stop() {
+audio.pause();
+on = false;
+}
+
+return {
+start: start,
+stop: stop,
+isOn: function () {
+return on;
+}
+};
+})();
 
   var ctlMusic = $('#ctlMusic');
   ctlMusic.addEventListener('click', function () {
