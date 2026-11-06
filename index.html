@@ -570,12 +570,19 @@ html[lang="en"] .ev .k { letter-spacing: .24em; text-transform: uppercase; font-
   background: var(--surface);
 }
 
+/* Bride and Groom photos */
 .arch-photo img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center 28%;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 28%;
+}
+
+/* Slight zoom for Groom photo */
+.fig:nth-child(2) .arch-photo img {
+    transform: scale(1.65);
+    object-position: center 25%;
 }
 
 /* Registry fixed photo */
